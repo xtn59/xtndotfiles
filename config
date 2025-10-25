@@ -1,0 +1,38 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-top": 10,
+  "margin-left": 10,
+  "margin-right": -3,
+  "modules-left": [
+   "custom/playerctl",
+   "hyprland/window"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "memory",
+    "disk",
+    "clock"
+  ],
+  "clock": {
+    "format": "{:%H:%M}"
+  },
+  "disk": {
+    "format": "disk {used}",
+    "path": "/",
+    "unit": "GB",
+    "interval": 2
+  },
+  "memory": {
+    "format": "ram {used}GiB",
+    "unit": "GB",
+    "interval": 2
+  },
+  "custom/playerctl": {
+   "exec": "playerctl metadata --format '{{artist}} - {{title}}' | sed -e 's/&/\\&amp;/g' -e 's/</\\&lt;/g' -e 's/>/\\&gt;/g'",
+   "interval": 2,
+   "format": "{}"
+  }
+}
